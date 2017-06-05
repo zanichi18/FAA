@@ -7,6 +7,10 @@ class Education::RecruitmentsController < Education::BaseController
       Supports::Education::IndexRecruitment.new params[:page], search_params
   end
 
+  def new
+    @recruitment = Education::Post.new
+  end
+
   def show
     @recruitment_object = Supports::Education::ShowRecruitment.new @recruitment
   end
